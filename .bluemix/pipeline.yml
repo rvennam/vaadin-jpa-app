@@ -31,7 +31,10 @@ stages:
       space: ${CF_SPACE}
       application: ${CF_APP}
     script: |
+
       #!/bin/bash
+      cf create-service elephantsql turtle vaadindb
+
       cf push "${CF_APP}"
 
       # view logs
